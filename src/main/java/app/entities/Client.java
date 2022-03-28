@@ -1,11 +1,18 @@
 package app.entities;
 
 import java.util.Objects;
-
+/**
+ * @author SvyatoslavK
+ * создает объект клиента
+ * */
 public class Client {
     private String userName;
     private String password;
-
+    /**
+     * конструктор создания клиента
+     * @param userName имя клиента
+     * @param password пароль клиента
+     * */
     public Client(String userName, String password) {
         this.userName = userName;
         this.password = password;

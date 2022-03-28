@@ -1,24 +1,26 @@
 package app.servlets;
 
-
-import app.models.Model;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.List;
-
-public class ListServlets extends HttpServlet {
+/**
+ * @author SvyatoslavK
+ * Servlet страницы профиля клиента
+ * Mapping прописан в @WebServlet
+ * */
+@WebServlet("/profileview")
+public class ProfileServlet extends HttpServlet {
+    /**
+     *метод doGet отправляет страницу rrofileview.jsp
+     * */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Model model = Model.getInstance();
-        List<String> names = model.list();
-        req.setAttribute("userNames", names);
-
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/list.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/views/profileview.jsp");
         requestDispatcher.forward(req, resp);
     }
 }

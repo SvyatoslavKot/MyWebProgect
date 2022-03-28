@@ -4,23 +4,20 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <servlet>
-        <servlet-name>add</servlet-name>
-        <servlet-class>app.servlets.AddServlets</servlet-class>
+        <servlet-name>main</servlet-name>
+        <servlet-class>app.servlets.MainServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>add</servlet-name>
-        <url-pattern>/add</url-pattern>
+        <servlet-name>main</servlet-name>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!-- list servlet -->
-    <servlet>
-        <servlet-name>list</servlet-name>
-        <servlet-class>app.servlets.ListServlets</servlet-class>
-    </servlet>
 
-    <servlet-mapping>
-        <servlet-name>list</servlet-name>
-        <url-pattern>/list</url-pattern>
-    </servlet-mapping>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/views/error/error404.jsp</location>
+    </error-page>
+
 </web-app>
